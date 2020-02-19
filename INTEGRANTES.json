@@ -1,13 +1,13 @@
-{
+  {
   "aluno-1": {
     "nome": "",
     "email-insper": "",
     "user-github": ""
   },
   "aluno-2": {
-    "nome": "",
-    "email-insper": "",
-    "user-github": ""
+    "nome": "Murilo Menezes",
+    "email-insper": "murilolcm@al.insper.edu.br",
+    "user-github": "murilomenezes1"
   },
   "aluno-3": {
     "nome": "",
