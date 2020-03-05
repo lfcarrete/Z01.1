@@ -31,7 +31,7 @@ begin
 			not "0110000" when (bcd = "0001") else --1
 			not "1101101" when (bcd = "0010") else --2
 			not "1111001" when (bcd = "0011") else --3
-			not "0110001" when (bcd = "0100") else --4
+			not "0110011" when (bcd = "0100") else --4
 			not "1011011" when (bcd = "0101") else --5
 			not "1011111" when (bcd = "0110") else --6
 			not "1110000" when (bcd = "0111") else --7
