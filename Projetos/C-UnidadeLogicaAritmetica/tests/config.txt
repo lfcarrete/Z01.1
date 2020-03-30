@@ -3,18 +3,9 @@
 
 #FullAdder.vhd
 #HalfAdder.vhd
-<<<<<<< HEAD
-#Add16.vhd
-#Inc16.vhd
+Add16.vhd
+Inc16.vhd
 #comparador16.vhd
 #inversor16.vhd
 #zerador16.vhd
 #ALU.vhd
-=======
-#Add16.vhd
-#Inc16.vhd
-#comparador16.vhd
-#inversor16.vhd
-zerador16.vhd
-#ALU.vhd
->>>>>>> 298c1f253fb34c471bb62d295022ea3c7f2748e8
