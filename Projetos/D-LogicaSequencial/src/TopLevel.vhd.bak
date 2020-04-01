@@ -31,21 +31,21 @@ end entity;
 architecture rtl of TopLevel is
 
 
-component BinaryDigit is
+component FlipFlopD is
 	port(
-		clock:   in STD_LOGIC;
-		input:   in STD_LOGIC;
-		load:    in STD_LOGIC;
-		output: out STD_LOGIC
+		clock:  in std_logic;
+		d:      in std_logic;
+		clear:  in std_logic;
+		preset: in std_logic;
+		q:     out std_logic
 	);
 end component;
-
 
 --------------
 -- signals
 --------------
 
-signal clock, set : std_logic;
+signal clock, clear, set : std_logic;
 
 ---------------
 -- implementacao
@@ -54,15 +54,16 @@ begin
 
 Clock <= not KEY(0); -- os botoes quando nao apertado vale 1
                      -- e apertado 0, essa logica inverte isso
-set	<= not KEY(1);
+clear <= not KEY(1);
+set	<= not KEY(2);
 
-
-u0 : BinaryDigit port map (
+u0 : FlipFlopD port map (
 		clock    => Clock,
-		input    => SW(0),
-		load     => set,
-		output   => LEDR(0)
-	);	
-
+		d        => SW(0),
+		clear    => clear,
+		preset   => set,
+		q        => LEDR(0)
+	);		
+ 
 
 end rtl;
