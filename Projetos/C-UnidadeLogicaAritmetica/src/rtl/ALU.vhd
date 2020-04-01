@@ -35,7 +35,7 @@ entity ALU is
 			ny:    in STD_LOGIC;                     -- inverte a entrada y
 			f:     in STD_LOGIC;                     -- se 0 calcula x & y, senão x + y
 			no:    in STD_LOGIC;                     -- inverte o valor da saída
-			cout:  out STD_LOGIC;                     -- setado se x + y estoura
+			cout: out STD_LOGIC;                    -- setado se x + y estoura
 			zr:    out STD_LOGIC;                    -- setado se saída igual a zero
 			ng:    out STD_LOGIC;                    -- setado se saída é negativa
 			saida: out STD_LOGIC_VECTOR(15 downto 0) -- saída de dados da ALU
@@ -95,7 +95,7 @@ architecture  rtl OF alu is
 		);
 	end component;
 
-   SIGNAL zxout, zyout, nxout ,nyout, andout, adderout, carryout, muxout, precomp: std_logic_vector(15 downto 0);
+   SIGNAL zxout,zyout,nxout,nyout,andout,adderout,muxout,precomp: std_logic_vector(15 downto 0);
 
 begin
 
@@ -162,62 +162,5 @@ begin
 	);
 
 	saida <= precomp;
-
-zeradorx: zerador16 port map(
-      z => zx,
-      a => x,
-      y => zxout
-   );
-
-zeradory: zerador16 port map(
-      z => zy,
-      a => y,
-      y => zyout
-   );
-
-inversorx: inversor16 port map(
-      z => nx,
-      a => zxout,
-      y => nxout
-   );
-
-inversory: inversor16 port map(
-      z => ny,
-      a => zyout,
-      y => nyout
-   );
-
-AndXY: And16 port map(
-      a => nxout,
-      b => nyout,
-      q => andout
-   );
-
-AddXY: Add16 port map(
-      a => nxout,
-      b => nyout,
-      q => adderout
-   );
-
-MuxXY: Mux16 port map(
-      a => andout,
-      b => adderout,
-      sel => f,
-      q => muxout
-   );
-
-inversorXY: inversor16 port map(
-      z => no,
-      a => muxout,
-      y => precomp
-   );
-
-comparadorXY: comparador16 port map(
-      a => precomp,
-      zr => zr,
-      ng => ng
-   );
-
-saida <= precomp;
 
 end architecture;

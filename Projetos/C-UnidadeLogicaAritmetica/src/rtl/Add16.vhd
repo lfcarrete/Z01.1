@@ -5,20 +5,13 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
 entity Add16 is
-<<<<<<< HEAD
 	port(
 		a   :  in STD_LOGIC_VECTOR(15 downto 0);
 		b   :  in STD_LOGIC_VECTOR(15 downto 0);
 		q   : out STD_LOGIC_VECTOR(15 downto 0);
     carry: out STD_LOGIC
 	);
-=======
-port(
- a   :  in STD_LOGIC_VECTOR(15 downto 0);
- b   :  in STD_LOGIC_VECTOR(15 downto 0);
- q   : out STD_LOGIC_VECTOR(15 downto 0)
-);
->>>>>>> 34f8135778a3221722084b181ff68db2d2357ee7
+
 end entity;
 
 architecture rtl of Add16 is
@@ -39,7 +32,6 @@ architecture rtl of Add16 is
     signal c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15: STD_LOGIC;
 
 begin
-<<<<<<< HEAD
 
   bit0: FullAdder port map(
     a => a(0),
@@ -170,56 +162,7 @@ begin
   );
 
   carry <= c15;
-=======
-  -- Implementação vem aqui!
-  u1: FullAdder port map (
-    a(0), b(0),'0', q(0), c(0));
- 
-  u2: FullAdder port map (
-    a(1), b(1), c(0), q(1), c(1));
 
-  u3: FullAdder port map (
-    a(2), b(2), c(1), q(2), c(2));
-
-  u4: FullAdder port map (
-    a(3), b(3), c(2), q(3), c(3));
-
-  u5: FullAdder port map (
-    a(4), b(4), c(3), q(4), c(4));
-
-  u6: FullAdder port map (
-    a(5), b(5), c(4), q(5), c(5));
-
-  u7: FullAdder port map (
-    a(6), b(6), c(5), q(6), c(6));
-
-  u8: FullAdder port map (
-    a(7), b(7), c(6), q(7), c(7));
-
-  u9: FullAdder port map (
-    a(8), b(8), c(7), q(8), c(8));
-
-  u10: FullAdder port map (
-    a(9), b(9), c(8), q(9), c(9));
-
-  u11: FullAdder port map (
-    a(10), b(10), c(9), q(10), c(10));
-
-  u12: FullAdder port map (
-    a(11), b(11), c(10), q(11), c(11));
-
-  u13: FullAdder port map (
-    a(12), b(12), c(11), q(12), c(12));
-
-  u14: FullAdder port map (
-    a(13), b(13), c(12), q(13), c(13));
-
-  u15: FullAdder port map (
-    a(14), b(14), c(13), q(14), c(14));
-
-  u16: FullAdder port map (
-    a(15), b(15), c(14), q(15), c(15));
->>>>>>> 34f8135778a3221722084b181ff68db2d2357ee7
 
 end architecture;
 

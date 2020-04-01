@@ -32,7 +32,7 @@ component ALU is
 end component;
 
    signal  inX, inY : STD_LOGIC_VECTOR(15 downto 0);
-   signal  inZX, inNX, inZY, inNY, inF, inNO, outZR, outNG : STD_LOGIC;
+   signal  inZX, inNX, inZY, inNY, inF, inNO, outCarry, outZR, outNG : STD_LOGIC;
    signal  outSaida : STD_LOGIC_VECTOR(15 downto 0);
 
 begin
@@ -46,6 +46,7 @@ begin
     ny => inNy,
     f  => inF,
     no => inNo,
+    cout => outCarry,
     zr => outZr,
     ng => outNg,
     saida => outsaida);
@@ -56,15 +57,15 @@ begin
 
       -- Teste: 1
       inX <= "0000000000000000"; inY <= "1111111111111111";
-      inZX <= '1'; inNX <= '0'; inZY <= '1'; inNY <= '0'; inF <= '1'; inNO <= '0'; -- OUT = 0
+      inZX <= '1'; inNX <= '0'; inZY <= '1'; inNY <= '0'; inF <= '1'; inNO <= '0';
       wait for 200 ps;
-      assert(outZR = '1' and outNG = '0' and outSaida= "0000000000000000")  report "Falha em teste: 1" severity error;
+      assert(outZR = '1' and outNG = '0' and outSaida= "0000000000000000" and outCarry = '0')  report "Falha em teste: 1" severity error;
 
       -- Teste: 2
       inX <= "0000000000000000"; inY <= "1111111111111111";
-      inZX <= '1'; inNX <= '1'; inZY <= '1'; inNY <= '1'; inF <= '1'; inNO <= '1'; -- OUT = 1
+      inZX <= '1'; inNX <= '1'; inZY <= '1'; inNY <= '1'; inF <= '1'; inNO <= '1';
       wait for 200 ps;
-      assert(outZR = '0' and outNG = '0' and outSaida= "0000000000000001")  report "Falha em teste: 2" severity error;
+      assert(outZR = '0' and outNG = '0' and outSaida= "0000000000000001" and outCarry = '1')  report "Falha em teste: 2" severity error;
 
       -- Teste: 3
       inX <= "0000000000000000"; inY <= "1111111111111111";
