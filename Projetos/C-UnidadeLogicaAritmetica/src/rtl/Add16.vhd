@@ -8,7 +8,8 @@ entity Add16 is
 	port(
 		a   :  in STD_LOGIC_VECTOR(15 downto 0);
 		b   :  in STD_LOGIC_VECTOR(15 downto 0);
-		q   : out STD_LOGIC_VECTOR(15 downto 0)
+		q   : out STD_LOGIC_VECTOR(15 downto 0);
+    carry: out STD_LOGIC
 	);
 end entity;
 
@@ -20,7 +21,7 @@ architecture rtl of Add16 is
   component FullAdder is
     port(
       a,b,c:      in STD_LOGIC;   -- entradas
-      soma,vaium: out STD_LOGIC   -- sum e carry
+      soma, vaium: out STD_LOGIC   -- sum e carry
     );
   end component;
 
@@ -155,5 +156,7 @@ begin
     soma => q(15),
     vaium => c15
   );
+
+  carry <= c15;
 
 end architecture;

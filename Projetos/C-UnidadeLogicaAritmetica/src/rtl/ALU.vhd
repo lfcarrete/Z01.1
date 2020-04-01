@@ -35,6 +35,7 @@ entity ALU is
 			ny:    in STD_LOGIC;                     -- inverte a entrada y
 			f:     in STD_LOGIC;                     -- se 0 calcula x & y, senão x + y
 			no:    in STD_LOGIC;                     -- inverte o valor da saída
+			cout:  out STD_LOGIC;                     -- setado se x + y estoura
 			zr:    out STD_LOGIC;                    -- setado se saída igual a zero
 			ng:    out STD_LOGIC;                    -- setado se saída é negativa
 			saida: out STD_LOGIC_VECTOR(15 downto 0) -- saída de dados da ALU
@@ -64,7 +65,8 @@ architecture  rtl OF alu is
 		port(
 			a   :  in STD_LOGIC_VECTOR(15 downto 0);
 			b   :  in STD_LOGIC_VECTOR(15 downto 0);
-			q   : out STD_LOGIC_VECTOR(15 downto 0)
+			q   : out STD_LOGIC_VECTOR(15 downto 0);
+			carry: out STD_LOGIC
 		);
 	end component;
 
@@ -93,7 +95,7 @@ architecture  rtl OF alu is
 		);
 	end component;
 
-   SIGNAL zxout,zyout,nxout,nyout,andout,adderout,muxout,precomp: std_logic_vector(15 downto 0);
+   SIGNAL zxout, zyout, nxout ,nyout, andout, adderout, carryout, muxout, precomp: std_logic_vector(15 downto 0);
 
 begin
 
@@ -129,7 +131,8 @@ begin
 	add_xy: Add16 port map (
 		a => nxout,
 		b => nyout,
-		q => adderout
+		q => adderout,
+		carry => cout
 	);
 
 	-- Relação 'And' entre a entrada x e a entrada y:
