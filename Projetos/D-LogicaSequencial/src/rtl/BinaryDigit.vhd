@@ -37,5 +37,11 @@ architecture arch of BinaryDigit is
 	signal dffout,muxout: std_logic;
 
 begin
+	process(clock) begin
+		if(load = '1') then
+			output <= input;
+		end if;
+	end process;
+		
 
 end architecture;
