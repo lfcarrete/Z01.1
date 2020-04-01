@@ -32,24 +32,25 @@ begin
   begin
     test_runner_setup(runner, runner_cfg);
 
-    -- Teste: 1
-    -- 0 + 0
+    -- Teste: 1 (0 + 0)
     inA <= '0'; inB<= '0';
     wait for 200 ps;
     assert(soma = '0' and vaium = '0')  report "Falha em teste: 1" severity error;
 
-    -- Teste: 2
-    -- 0 + 1
+    -- Teste: 2 (0 + 1)
     inA <= '0'; inB<= '1';
     wait for 200 ps;
     assert(soma = '1' and vaium = '0')  report "Falha em teste: 2" severity error;
 
-    -- Teste: 3
-    -- 1 + 0
+    -- Teste: 3 (1 + 0)
     inA <= '1'; inB<= '0';
     wait for 200 ps;
     assert(soma = '1' and vaium = '0')  report "Falha em teste: 3" severity error;
 
+    -- Teste: 4 (1 + 1)
+    inA <= '1'; inB <= '1';
+    wait for 200 ps;
+    assert(soma = '0' and vaium = '1') report "Falha em teste: 4" severity error;
 
 
     test_runner_cleanup(runner); -- Simulacao acaba aqui
