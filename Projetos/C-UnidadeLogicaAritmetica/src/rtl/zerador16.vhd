@@ -12,6 +12,12 @@ end zerador16;
 architecture rtl of zerador16 is
 
 begin
+<<<<<<< HEAD
   y <= "0000000000000000" when (z = '1') else a;
+=======
+  
+  y <= "0000000000000000" when z = '1' else 
+  a;
+>>>>>>> 34f8135778a3221722084b181ff68db2d2357ee7
 
 end architecture;
