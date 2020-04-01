@@ -1,9 +1,3 @@
--- Elementos de Sistemas
--- by Luciano Soares
--- FullAdder.vhd
-
--- Implementa Full Adder
-
 Library ieee;
 use ieee.std_logic_1164.all;
 
@@ -15,11 +9,15 @@ entity FullAdder is
 end entity;
 
 architecture rtl of FullAdder is
-  -- Aqui declaramos sinais (fios auxiliares)
-  -- e componentes (outros módulos) que serao
-  -- utilizados nesse modulo.
-
+	signal s1, s2, s3, s4: STD_LOGIC;
 begin
-  -- Implementação vem aqui!
+	
+	s1 <= (a and not(b) and not(c));
+	s2 <= (not(a) and b and not(c));
+	s3 <= (not(a) and not(b) and c);
+	s4 <= (a and b and c);
+
+	soma <= (s1) or (s2) or (s3) or (s4);
+	vaium <= (a and b) or (b and c) or (a and c);
 
 end architecture;
