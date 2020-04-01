@@ -89,8 +89,8 @@ begin
 	bcd_out: binarioToBcd port map(
 		clk => CLOCK_50,
 		reset => '0',
-      	binary_in => SW(9 downto 0),
-      	bcd0 => dec0,
+      binary_in => SW(9 downto 0),
+      bcd0 => dec0,
 		bcd1 => dec1,
 		bcd2 => dec2,
 		bcd3 => dec3,
