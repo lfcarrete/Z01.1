@@ -38,7 +38,7 @@ architecture arch of BinaryDigit is
 
 begin
 
-	u0: Mux2Way 
+	u1: Mux2Way 
 	port map 
 	(
 		a   => dffout,

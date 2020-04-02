@@ -538,6 +538,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+set_global_assignment -name VHDL_FILE "../../B-LogicaCombinacional/src/rtl/Mux2Way.vhd"
 set_global_assignment -name VHDL_FILE ../src/rtl/BinaryDigit.vhd
 set_global_assignment -name VHDL_FILE ../src/rtl/PC.vhd
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Or16.vhd"
@@ -550,7 +551,6 @@ set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Mux8W
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd"
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd"
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd"
-set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd"
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/DMux8Way16.vhd"
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd"
 set_global_assignment -name VHDL_FILE "../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd"
