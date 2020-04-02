@@ -32,7 +32,7 @@ architecture rtl of TopLevel is
 
 
 component BinaryDigit is
-	port(
+		port(
 		clock:   in STD_LOGIC;
 		input:   in STD_LOGIC;
 		load:    in STD_LOGIC;
@@ -40,12 +40,11 @@ component BinaryDigit is
 	);
 end component;
 
-
 --------------
 -- signals
 --------------
 
-signal clock, set : std_logic;
+signal clock, clear, set : std_logic;
 
 ---------------
 -- implementacao
@@ -54,15 +53,13 @@ begin
 
 Clock <= not KEY(0); -- os botoes quando nao apertado vale 1
                      -- e apertado 0, essa logica inverte isso
-set	<= not KEY(1);
-
 
 u0 : BinaryDigit port map (
 		clock    => Clock,
 		input    => SW(0),
-		load     => set,
+		load     => SW(1),
 		output   => LEDR(0)
-	);	
-
+	);		
+ 
 
 end rtl;
