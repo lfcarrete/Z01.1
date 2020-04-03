@@ -20,8 +20,14 @@ architecture rtl of HalfAdder is
   -- utilizados nesse modulo.
 
 begin
+<<<<<<< HEAD
   -- Implementação vem aqui!
   soma <= a xor b;
+=======
+  
+  soma <= (a and not(b)) or (not(a) and b);
+
+>>>>>>> ULAupgrade
   vaium <= a and b;
 
 end architecture;

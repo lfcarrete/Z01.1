@@ -29,9 +29,18 @@ architecture rtl of Inc16 is
   end component;
 
 begin
+<<<<<<< HEAD
   -- Implementação vem aqui!
   
    u1: Add16 port map(
     a,"0000000000000001", q);
+=======
+
+  add_1: Add16 port map(
+    a => a,
+    b => "0000000000000001",
+    q => q
+  );
+>>>>>>> ULAupgrade
 
 end architecture;

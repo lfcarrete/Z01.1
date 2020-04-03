@@ -27,7 +27,15 @@ end component;
 
 begin
 
+<<<<<<< HEAD
 	mapping: Add16 port map(inA, inB, outQ);
+=======
+	mapping: Add16 port map(
+  a => inA,
+  b => inB,
+  q => outQ,
+  carry => c);
+>>>>>>> ULAupgrade
 
   main : process
   begin
