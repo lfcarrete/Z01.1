@@ -63,7 +63,7 @@ begin
       inX <= "0000000000000000"; inY <= "1111111111111111";
       inZX <= '1'; inNX <= '1'; inZY <= '1'; inNY <= '1'; inF <= '1'; inNO <= '1';
       wait for 200 ps;
-      assert(outZR = '0' and outNG = '0' and outSaida= "0000000000000001")  report "Falha em teste: 2" severity error;
+      assert(outZR = '0' and outNG = '0' and outSaida= "0000000000000001" and outCarry = '1')  report "Falha em teste: 2" severity error;
 
       -- Teste: 3
       inX <= "0000000000000000"; inY <= "1111111111111111";
