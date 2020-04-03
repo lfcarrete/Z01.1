@@ -28,7 +28,11 @@ end component;
    signal c : STD_LOGIC;
 begin
 
-	mapping: Add16 port map(inA, inB, outQ, c);
+	mapping: Add16 port map(
+  a => inA,
+  b => inB,
+  q => outQ,
+  carry => c);
 
   main : process
   begin
