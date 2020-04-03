@@ -18,5 +18,13 @@ end entity;
 architecture arch of Mux8Way16 is
 begin
 
+	q(15 downto 0) <= a(15 downto 0) when (sel = "000") else
+					  b(15 downto 0) when (sel = "001") else
+					  c(15 downto 0) when (sel = "010") else
+					  d(15 downto 0) when (sel = "011") else
+					  e(15 downto 0) when (sel = "100") else
+					  f(15 downto 0) when (sel = "101") else
+					  g(15 downto 0) when (sel = "110") else
+					  h(15 downto 0) when (sel = "111");
 
 end architecture;
