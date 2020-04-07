@@ -6,12 +6,12 @@
 #PC.vhd
 #Register8.vhd
 #Register16.vhd
-Register32.vhd
+#Register32.vhd
 #Register64.vhd
 #Ram8.vhd
 #Ram64.vhds
-Ram512.vhd
-#Ram4K.vhd
+#Ram512.vhd
+Ram4K.vhd
 
 ########
 # Rubrica A
