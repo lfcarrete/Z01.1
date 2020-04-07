@@ -15,7 +15,22 @@ entity FlipFlopJK is
 end entity;
 
 architecture arch of FlipFlopJK is
+	
+	signal state: STD_LOGIC;
+	signal input: STD_LOGIC_VECTOR(1 downto 0);
 
 begin
+	process(clock, J, K) begin
+		
+		if (rising_edge(CLOCK)) then
+			if (K = '1') then
+				q <= '0';
+			elsif (J = '1') then
+				q <= '1';
+			end if;
+		end if;
+  	end process;
+
+	notq <= not q;
 
 end architecture;

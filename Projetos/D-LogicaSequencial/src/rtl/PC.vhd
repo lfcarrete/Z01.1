@@ -26,8 +26,7 @@ end entity;
 
 architecture arch of PC is
 
- signal outInc, outLoad : STD_LOGIC_VECTOR(15 downto 0);
- signal muxSelector : STD_LOGIC_VECTOR(1 downto 0);
+ signal inInc, outInc, outLoad, outReset, outRegister : STD_LOGIC_VECTOR(15 downto 0);
 
   component Inc16 is
       port(
@@ -36,13 +35,11 @@ architecture arch of PC is
           );
   end component;
 
-  component Mux4Way16 is
+  component Mux16 is
         port ( 
             a:   in  STD_LOGIC_VECTOR(15 downto 0);
             b:   in  STD_LOGIC_VECTOR(15 downto 0);
-            c:   in  STD_LOGIC_VECTOR(15 downto 0);
-            d:   in  STD_LOGIC_VECTOR(15 downto 0);
-            sel: in  STD_LOGIC_VECTOR(1 downto 0);
+            sel: in  STD_LOGIC;
             q:   out STD_LOGIC_VECTOR(15 downto 0)
             );
     end component;
@@ -58,31 +55,43 @@ architecture arch of PC is
     end component;
 
 begin
+    outRegister<= input;
 
---    inc: Inc16 port map (
---        a => input,
---        q => outInc
---    );
+    inc: Inc16 port map (
+        a => outRegister,
+        q => inInc
+    );
 
---    load: Register16 port map (
---        clock => clock,
---        input => input,
---        load => load,
---        output => outLoad
---    );
+    muxInc: Mux16 port map (
+        a => outRegister,
+        b => inInc,
+        sel => increment,
+        q => outInc
+    );
 
---    muxout: Mux4Way16 port map ( 
---            a: "0000000000000000",
---            b: outLoad,
---            c: outInc,
---            d: input,
---            sel: muxSelector,
---            q: output
---    );
+    muxLoad: Mux16 port map (
+        a => outInc,
+        b => input,
+        sel => load,
+        q => outLoad
+    );
 
---    muxSelector <= "00" when (reset = '1') else
---                   "01" when (load = '1') else
---                   "10" when (increment = '1') else
---                   "11";
+    muxReset: Mux16 port map (
+        a => outLoad,
+        b => "0000000000000000",
+        sel => reset,
+        q => outReset
+    );
+
+    reg: Register16 port map (
+        clock => clock,
+        input => outReset,
+        load => load,
+        output => outRegister
+    );
+
+    output <= outRegister;
+
+    
 
 end architecture;
