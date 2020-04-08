@@ -24,8 +24,8 @@ begin
 	if (rising_edge(CLOCK)) then
 	if (J = '0' and K = '0') then
 	q<='0';
-	elsif (J='1' and K='1')   then
-	notq<='1';
+	elsif (J='1' and K='1')  then
+	q<='1';
 	elsif  (J='0' and K='1') then
 	q<='0';
 	else

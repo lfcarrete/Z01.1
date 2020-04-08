@@ -7,11 +7,11 @@ use ieee.std_logic_1164.all;
 library vunit_lib;
 context vunit_lib.vunit_context;
 
-entity tb_FlipFlopT is
+entity tb_FlipFlopJK is
   generic (runner_cfg : string);
 end entity;
 
-architecture tb of tb_FlipFlopT is
+architecture tb of tb_FlipFlopJK is
 
 	component FlipFlopJK is
     port(
@@ -39,12 +39,12 @@ begin
     -- teste: 0 
 	 J <= '0'; K <= '0';
     wait until clk'event and clk='0';
-		assert(q = q) report "Falha em teste: 0" severity error; 
+		assert(q = '0') report "Falha em teste: 0" severity error; 
 	
 	 -- teste: 1 
 	 J <= '1'; K <= '1';
 	 wait until clk'event and  clk='0';
-		assert(q = notq) report "Falha em teste: 1" severity error;
+		assert(q = '1') report "Falha em teste: 1" severity error;
 		
 	 -- teste: 2
 	 J <= '0'; K <= '1';
