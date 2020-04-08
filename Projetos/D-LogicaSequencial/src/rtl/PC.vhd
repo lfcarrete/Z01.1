@@ -35,6 +35,7 @@ architecture arch of PC is
           );
   end component;
 
+<<<<<<< HEAD
  
 	 
   component Mux16 is
@@ -48,16 +49,24 @@ architecture arch of PC is
 	end component;
 	 
 	component Register16 is
+=======
+  component Register16 is
+>>>>>>> master
       port(
           clock:   in STD_LOGIC;
           input:   in STD_LOGIC_VECTOR(15 downto 0);
           load:    in STD_LOGIC;
           output: out STD_LOGIC_VECTOR(15 downto 0)
+<<<<<<< HEAD
 			);
    end component;
 	
 	signal inc16out,pcout,mincout,mloadout,mresetout: STD_LOGIC_VECTOR(15 downto 0);
 			  
+=======
+        );
+    end component;
+>>>>>>> master
 
 begin
 
