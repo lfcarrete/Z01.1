@@ -14,9 +14,6 @@ end entity;
 architecture arch of CounterDown is
 
 signal notq : STD_LOGIC_VECTOR(2 downto 0);
-signal outQ0, outQ1, outQ2 : STD_LOGIC;
-signal outNotQ0, outNotQ1, outNotQ2 : STD_LOGIC;
-
 
 	component FlipFlopT is
 	    port(
@@ -29,28 +26,26 @@ signal outNotQ0, outNotQ1, outNotQ2 : STD_LOGIC;
 
 begin
 
-	fft0: FlipFlopT port map (
-		clock => clock,
-		t => '1',
-		q => outQ0,
-		notq => outNotQ0
-	);
+fft0: FlipFlopT port map (
+	clock => clock,
+	t => '1',
+	q => q(0),
+	notq => notq(0)
+);
 
-	fft1: FlipFlopT port map (
-		clock => clock,
-		t => '1',
-		q => outQ1,
-		notq => outNotQ1
-	);
+fft1: FlipFlopT port map (
+	clock => notq(0),
+	t => '1',
+	q => q(1),
+	notq => notq(1)
+);
 
-	fft2: FLipFLopT port map (
-		clock => clock,
-		t => '1',
-		q => outQ2,
-		notq => outNotQ2
-	);
-
-	q <= outQ0 & outQ1 & outQ2;
+fft2: FlipFlopT port map (
+	clock => q(1),
+	t => '1',
+	q => q(2),
+	notq => notq(2)
+);
 
 
 end architecture;

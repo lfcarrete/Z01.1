@@ -20,8 +20,8 @@ architecture arch of FlipFlopT is
 		clock:  in std_logic;
 		J:      in std_logic;
 		K:      in std_logic;
-		q:      out std_logic:= '0';
-		notq:   out std_logic:= '1'
+		q:      out std_logic;
+		notq:   out std_logic
 	);
     end component;
 
