@@ -9,11 +9,7 @@
 #Register32.vhd
 #Register64.vhd
 #Ram8.vhd
-<<<<<<< HEAD
-#Ram64.vhds
-=======
-Ram64.vhd
->>>>>>> master
+#Ram64.vhd
 #Ram512.vhd
 #Ram4K.vhd
 
