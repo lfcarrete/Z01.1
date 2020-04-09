@@ -34,7 +34,7 @@ fft0: FlipFlopT port map (
 );
 
 fft1: FlipFlopT port map (
-	clock => notq(0),
+	clock => q(0),
 	t => '1',
 	q => q(1),
 	notq => notq(1)
