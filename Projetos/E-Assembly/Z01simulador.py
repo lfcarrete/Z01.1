@@ -6,8 +6,10 @@
 from os.path import join, dirname
 import sys, subprocess, os
 from pathlib import Path
+from os.path import expanduser
+home = expanduser("~")
 
-sys.path.insert(0, str(Path.home()) + '/Z01-Tools/scripts/')
+sys.path.insert(0, str(home) + '/Z01-Tools/scripts/')
 from config import *
 
 if __name__ == "__main__":
