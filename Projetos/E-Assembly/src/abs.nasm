@@ -9,6 +9,7 @@ nop
 negw %D
 leaw $0, %A
 movw %D, (%A)
+
 END:
 
 
