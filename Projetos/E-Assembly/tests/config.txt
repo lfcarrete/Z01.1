@@ -18,7 +18,7 @@ add.nasm 1 1000
 #isEven.nasm 2 1000
 #mult.nasm 1 10000
 #mod.nasm 2 10000
-#div.nasm  2 10000
+div.nasm  2 10000
 
 ###########################
 ## conceito B
