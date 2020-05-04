@@ -14,6 +14,7 @@ R-LCD.nasm 0 4000
 #sub.nasm 1 1000
 #mov.nasm 1 1000
 #abs.nasm 2 1000
+<<<<<<< HEAD
 #max.nasm 2 10000
 #mult.nasm 1 10000
 #mod.nasm 2 10000
@@ -25,12 +26,32 @@ SWeLED.nasm 1 1000
 #LCDlinha.nasm 0 10000
 #LCDquadrado.nasm 0 10000
 #LCDletraGrupo.nasm 0 10000
+=======
+#isEven.nasm 2 1000
+mult.nasm 1 10000
+#mod.nasm 2 10000
+div.nasm  2 10000
+>>>>>>> 6cf8d7f51d90335b11f2056ff56a457c809e8751
 
 ###########################
 ## conceito B
 ###########################
 
+<<<<<<< HEAD
 #isEven.nasm 2 1000
 #palindromo.nasm 2 1000
 #LCDnomeGrupo.nasm 0 10000
+=======
+##factorial.nasm 2 10000
+##pow.nasm 2 10000
+palindromo.nasm 2 1000
+#stringLength.nasm 2 2000
+
+##########################
+## conceito A
+##########################
+#matrizDetermnante.nasm 1 2000
+#stringTrim.nasm
+#SWeLED.nasm
+>>>>>>> 6cf8d7f51d90335b11f2056ff56a457c809e8751
 

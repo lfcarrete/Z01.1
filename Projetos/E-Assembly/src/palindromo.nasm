@@ -18,6 +18,46 @@
 ;  RAM[12] = a
 ;  RAM[13] = r
 ;  RAM[14] = a
-; 
 
- 
+
+; RAM[0] = 0
+leaw $0, %A
+movw %A, (%A)
+
+; D = RAM[10]
+leaw $10, %A
+movw (%A), %D
+
+; A = RAM[14]
+leaw $14, %A
+movw (%A), %A
+
+; IF RAM[10] != RAM[14] => END
+subw %A, %D, %D
+movw %D, %A
+leaw $END, %A
+jne
+nop
+
+; D = RAM[11]
+leaw $11, %A
+movw (%A), %D
+
+; A = RAM[13]
+leaw $13, %A
+movw (%A), %A
+
+; IF RAM[11] != RAM[13] => END
+subw %A, %D, %D
+movw %D, %A
+leaw $END, %A
+jne
+nop
+
+; IF RAM[10] == RAM[14] & RAM[11] == RAM[13] => RAM[0] = 1
+leaw $1, %A
+movw %A, %D
+leaw $0, %A
+movw %D, (%A)
+
+END:
