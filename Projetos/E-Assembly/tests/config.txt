@@ -12,7 +12,7 @@ R-LCD.nasm 1 4000
 
 add.nasm 1 1000
 #sub.nasm 1 1000
-#mov.nasm 1 1000
+mov.nasm 1 1000
 #max.nasm 2 10000
 #abs.nasm 2 1000
 #isEven.nasm 2 1000
@@ -25,7 +25,7 @@ div.nasm  2 10000
 ###########################
 
 ##factorial.nasm 2 10000
-##pow.nasm 2 10000
+pow.nasm 2 10000
 palindromo.nasm 2 1000
 #stringLength.nasm 2 2000
 
