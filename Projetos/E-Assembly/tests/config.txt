@@ -26,7 +26,7 @@ div.nasm  2 10000
 
 ##factorial.nasm 2 10000
 ##pow.nasm 2 10000
-#palindromo.nasm 2 1000
+palindromo.nasm 2 1000
 #stringLength.nasm 2 2000
 
 ##########################
