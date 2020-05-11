@@ -5,3 +5,67 @@
 
 ; Calcula o fatorial do número em R0 e armazena o valor em R1.
 
+
+leaw $1, %A
+movw (%A), %D
+incw %D
+movw %D, (%A)
+leaw $0, %A 
+movw (%A), %D
+
+leaw $END, %A ; !=0
+je %D
+nop
+
+FACTORIAL:
+
+leaw %1, %A ; RAM[3] == RAM[1]
+movw (%A), %D
+leaw $3, %A
+movw %D, (%A)
+
+leaw $0, %A
+movw (%A), %D
+
+leaw $END,%A 
+decw %D
+je %D
+nop
+
+leaw $2, %A ; RAM[2] == RAM[0] 
+movw %D, (%A)
+
+
+
+MULT:
+
+leaw $3, %A  ; Valor antigo 
+movw (%A), %D
+
+leaw $1, %A   ; soma 
+addw (%A), %D, %D
+movw %D, (%A)
+
+leaw $2, %A ; counter -= 1
+movw (%A), %D
+decw %D
+movw %D, (%A)
+
+leaw $MULT, %A ; IF counter == 0 
+jne %D
+nop
+
+
+leaw $0, %A  ; RAM[0] -= 1
+movw (%A), %D
+decw %D
+movw %D, (%A)
+
+leaw $FACTORIAL, %A
+jmp 
+nop
+
+
+END:
+
+
