@@ -40,9 +40,10 @@ movw (%A), %D
 decw %D
 movw %D, (%A)
 
+
 MULT:
 
-leaw $1, %A ;
+leaw $1, %A 
 movw (%A), %D
 
 leaw $3, %A 
@@ -65,6 +66,10 @@ leaw $MULT, %A ; IF counter == 0
 jne %D
 nop
 
+
+
 leaw $FACTORIAL, %A
 jmp 
 nop
+
+END:
