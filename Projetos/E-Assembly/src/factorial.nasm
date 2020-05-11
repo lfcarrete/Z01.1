@@ -36,7 +36,7 @@ leaw $2, %A ; RAM[2] == RAM[0]
 movw %D, (%A)
 
 
-leaw $0, %A  ; RAM[0] -= 1
+leaw $0, %A  ; RAM[0] - 1
 movw (%A), %D
 decw %D
 movw %D, (%A)
