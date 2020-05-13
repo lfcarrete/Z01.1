@@ -19,7 +19,7 @@
 #mod.nasm 2 10000
 #div.nasm  2 10000
 #pow.nasm 2 10000
-factorial.nasm 2 10000
+#factorial.nasm 2 10000
 #stringLength.nasm 2 2000
 #SWeLED.nasm 1 1000
 #LCDlinha.nasm 0 10000
@@ -33,7 +33,7 @@ factorial.nasm 2 10000
 
 #isEven.nasm 2 1000
 #palindromo.nasm 2 1000
-LCDnomeGrupo.nasm 0 10000
+#LCDnomeGrupo.nasm 0 10000
 
 ##########################
 ## conceito A
@@ -41,5 +41,13 @@ LCDnomeGrupo.nasm 0 10000
 #matrizDetermnante.nasm 1 2000
 #stringTrim.nasm
 #SWeLED.nasm
+
+
+###########################
+## conceito A
+###########################
+
+vectorMean.nasm  2000
+SWeLED2.nasm 1 1000
 
 
