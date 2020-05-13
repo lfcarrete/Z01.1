@@ -35,6 +35,7 @@
 #palindromo.nasm 2 1000
 #LCDnomeGrupo.nasm 0 10000
 
+
 ##########################
 ## conceito A
 ##########################
@@ -42,12 +43,12 @@
 #stringTrim.nasm
 #SWeLED.nasm
 
-
 ###########################
 ## conceito A
 ###########################
 
 vectorMean.nasm  2000
 SWeLED2.nasm 1 1000
+
 
 
