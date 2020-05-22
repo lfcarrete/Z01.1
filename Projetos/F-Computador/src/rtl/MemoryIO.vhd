@@ -121,4 +121,9 @@ BEGIN
              LCD_WR_N 	  => LCD_WR_N
     );
 
+
+
+
+
+
 END logic;
