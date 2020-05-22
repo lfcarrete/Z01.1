@@ -88,6 +88,16 @@ architecture logic of MemoryIO is
       );
   end component;
 
+  component DMux4Way is
+    port ( 
+        a:   in  STD_LOGIC;
+        sel: in  STD_LOGIC_VECTOR(1 downto 0);
+        q0:  out STD_LOGIC;
+        q1:  out STD_LOGIC;
+        q2:  out STD_LOGIC;
+        q3:  out STD_LOGIC);
+  end component;
+
   component Register16 is
     port(
       clock:   in STD_LOGIC;
@@ -105,50 +115,18 @@ architecture logic of MemoryIO is
   signal SW16             : STD_LOGIC_VECTOR(15 downto 0);
   signal LED16            : STD_LOGIC_VECTOR(15 downto 0);
 
-  signal address_RAM      : STD_LOGIC_VECTOR(14 downto 0);
-  signal address_screen   : STD_LOGIC_VECTOR(14 downto 0);
-
   signal output_RAM       : STD_LOGIC_VECTOR(15 downto 0);
-  signal out_reg_LED      : STD_LOGIC_VECTOR(15 downto 0);
-
-  --signal output_display   : STD_LOGIC_VECTOR(15 downto 0);
-  --signal mux_sel          : STD_LOGIC_VECTOR( 1 downto 0);
-  --signal mux_sel1         : STD_LOGIC;
-  --signal mux_sel2         : STD_LOGIC;
-  --signal s_key_code       : STD_LOGIC_VECTOR( 6 downto 0);
-  --signal s_key_new        : STD_LOGIC;
-
-	--signal RST_internal     : STD_LOGIC := '1';
-
-	--signal input_internal   : STD_LOGIC_VECTOR(15 downto 0);
-	--signal address_internal : STD_LOGIC_VECTOR(14 downto 0);
-
-	--signal load_screen      : STD_LOGIC := '0';
-
-  signal input_RAM        : STD_LOGIC_VECTOR(15 downto 0);
-	signal input_screen     : STD_LOGIC_VECTOR(15 downto 0);
-  signal input_LED        : STD_LOGIC_VECTOR(15 downto 0);
-
-
 
 begin
 
   -- Controls LOAD selectors for Display, RAM e LED --
 
-  load_RAM     <= '1' when ( (address >= "000000000000000") and (address <= "011111111111111") and (load = '1') ) else '0'; -- Address from 0 to 16383 (RAM)
-  load_screen  <= '1' when ( (address >= "100000000000000") and (address <= "101001010111111") and (load = '1') ) else '0'; -- Address from 16384 to 21183 (LCD)
-  load_LED     <= '1' when ( (address = "101001011000000") and (load = '1') ) else '0';                                     -- Address 21184 (LED)
-  sel_SW       <= '1' when ( (address = "101001011000001") and (load = '1') ) else '0';                                     -- Address 21185 (SW)
-
-
-  ---------- SW and LED size compatibility -----------
-
-  LED16(15 downto 10) <= (others => '0');
-  LED16( 9 downto 0 ) <= input(9 downto 0);
+  load_RAM     <= '1' when (address < "100000000000000") else '0'; 
+  load_screen  <= '1' when ( (address >= "100000000000000") and (address < "101001011000000") ) else '0';   
+  load_LED     <= '1' when (address = "101001011000000") else '0';                                         
 
   SW16(15 downto 10) <= (others => '0');
   SW16( 9 downto  0) <= SW;
-
 
 
   Memory: RAM16K port map (
@@ -158,24 +136,6 @@ begin
     wren    => load_RAM,
     q       => output_RAM
   );
-
-  MuxRAM_SW: Mux16 port map (
-    a => SW16,
-    b => output_RAM,
-    sel => sel_SW,
-    q => output
-  );
-
-
-  LED_register: Register16 port map (
-    clock => CLK_SLOW,
-    input => LED16,
-    load  => load_LED,
-    output => out_reg_LED
-  );
-
-  LED <= out_reg_LED(9 downto 0);
-
 
   ScreenLoader: Screen port map (
     RST          => RST,
@@ -187,13 +147,26 @@ begin
     address      => address(13 downto 0),
     LCD_INIT_OK  => LCD_INIT_OK,
 
-    LCD_CS_N 	   => LCD_CS_N,
-    LCD_D 		   => LCD_D,
-    LCD_RD_N 	   => LCD_RD_N,
+    LCD_CS_N     => LCD_CS_N,
+    LCD_D        => LCD_D,
+    LCD_RD_N     => LCD_RD_N,
     LCD_RESET_N  => LCD_RESET_N,
-    LCD_RS 	     => LCD_RS,
-    LCD_WR_N 	   => LCD_WR_N
+    LCD_RS       => LCD_RS,
+    LCD_WR_N     => LCD_WR_N
   );
 
+  LED_register: Register16 port map (
+    clock  => CLK_SLOW,
+    input  => input,
+    load   => load_LED,
+    output => LED16
+  );
+
+  output <= output_RAM when (address < "100000000000000") else
+                  SW16 when (address = "101001011000001") else
+                  "0000000000000000";
+
+  LED16(15 downto 10) <= (others => '0');
+  LED(9 downto 0) <= LED16(9 downto 0);
 
 end logic;
