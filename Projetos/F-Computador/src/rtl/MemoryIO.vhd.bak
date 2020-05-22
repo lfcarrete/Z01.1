@@ -137,17 +137,7 @@ BEGIN
     ----------------------------------------
     --LOAD_DISPLAY <= ??????; 
     --LOAD_RAM     <= ??????; 
-    --LOAD_LED     <= ??????;
-	 
-	 -- Mapa de Memoria
-	 -- RAM 0-16383
-	 -- LCD 16384-21183
-	 -- LED 21184	
-	 -- Hex to Binary
-	 
-	 LOAD_RAM <= '1' when (ADDRESS <= "011111111111111");
-	 LOAD_DISPLAY <= '1' when (ADDRESS >= "100000000000000" and ADDRESS <= "101001010111111");
-	 LOAD_LED <= '1' when (ADDRESS = "101001011000000");
+    --LOAD_LED     <= ??????; 
 
     ----------------------------------------
     -- SW e LED                           --
@@ -164,8 +154,6 @@ BEGIN
     ----------------------------------------
     -- precisar ser: RAM ou SW16
     -- OUTPUT <= ?????? ;
-	 
-	 OUTPUT <= SW16 when (ADDRESS = "101001011000001") else OUTPUT_RAM when (ADDRESS <= "011111111111111");
 
 
 END logic;
