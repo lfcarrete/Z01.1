@@ -9,4 +9,8 @@ DATA_RADIX=BIN;
 
 CONTENT BEGIN
     21185 : 0000000000001010;
+<<<<<<< HEAD
 END;
+=======
+END;
+>>>>>>> upstream/master

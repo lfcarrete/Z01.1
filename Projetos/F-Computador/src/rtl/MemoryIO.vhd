@@ -92,6 +92,7 @@ ARCHITECTURE logic OF MemoryIO IS
   SIGNAL LOAD_LED         : STD_LOGIC := '0';
 
   SIGNAL OUTPUT_RAM       : STD_LOGIC_VECTOR(15 downto 0);
+
   SIGNAL SW16 : STD_LOGIC_VECTOR(15 downto 0);
   SIGNAL LED16 : STD_LOGIC_VECTOR(15 downto 0);
   SIGNAL DMUX_SEL : STD_LOGIC_VECTOR(1 downto 0);
@@ -105,6 +106,15 @@ ARCHITECTURE logic OF MemoryIO IS
       data    => INPUT,
       wren    => LOAD_RAM,
       q       => OUTPUT_RAM
+      );
+
+  RAM: RAM16K
+    PORT MAP(
+      address => ADDRESS(13 downto 0),
+      clock		=> CLK_FAST,
+      data		=> INPUT,
+      wren		=> LOAD_RAM,
+      q		    => OUTPUT_RAM
       );
 
     DISPLAY: Screen  port map (
@@ -166,8 +176,8 @@ ARCHITECTURE logic OF MemoryIO IS
     -- SAIDA do memory I/O                --
     ----------------------------------------
     -- precisar ser: RAM ou SW16
+
     OUTPUT <= SW16  when (ADDRESS = "101001011000001") else
               OUTPUT_RAM;
-
 
 END logic;
