@@ -18,6 +18,7 @@ import org.junit.runner.Description;
 
 import static org.junit.Assert.assertTrue;
 
+
 public class CodeTest  {
 
 	private static StringBuilder builder = new StringBuilder();
