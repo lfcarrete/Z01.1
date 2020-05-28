@@ -88,8 +88,11 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
-        /* TODO: implementar */
-    	return null;
+
+        String[] inst = command.split(" ");
+        if(inst[0].contentEquals("leaw")){return CommandType.A_COMMAND;}
+        else if(command.contains(":")){return CommandType.L_COMMAND;}
+        else {return CommandType.C_COMMAND;}
     }
 
     /**
