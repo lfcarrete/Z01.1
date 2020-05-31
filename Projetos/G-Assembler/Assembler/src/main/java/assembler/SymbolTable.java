@@ -29,6 +29,7 @@ public class SymbolTable {
      */
     public void addEntry(String symbol, int address) {
         /* TODO: implementar */
+        symbolTable.put(symbol, address);
     }
 
     /**
@@ -38,7 +39,7 @@ public class SymbolTable {
      */
     public Boolean contains(String symbol) {
         /* TODO: implementar */
-        return null;
+        return symbolTable.containsKey(symbol);
     }
 
     /**
@@ -47,8 +48,7 @@ public class SymbolTable {
      * @return valor numérico associado ao símbolo procurado.
      */
     public Integer getAddress(String symbol) {
-        /* TODO: implementar */
-    	return null;
+    	return symbolTable.get(symbol);
     }
 
     /**
@@ -59,8 +59,16 @@ public class SymbolTable {
      */
     //
     public void initialize() {
-        // Exemplo: Registradores Virtuais
-        this.addEntry("R0", 0);
-        /* TODO: implementar */
+        // Registradores Virtuais (R0 to R15)
+        for(int i = 0; i < 16 ; i++){
+            String value = new String("R" + i);
+            this.addEntry(value, i);
+        }
+        this.addEntry("SCREEN", 16384);
+        this.addEntry("SP", 0);
+        this.addEntry("LCL", 1);
+        this.addEntry("ARG",2);
+        this.addEntry("THIS",3);
+        this.addEntry("THAT",4);
     }
 }
