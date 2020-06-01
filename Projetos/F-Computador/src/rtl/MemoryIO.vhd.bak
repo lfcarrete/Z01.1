@@ -124,7 +124,6 @@ BEGIN
              LCD_WR_N 	  => LCD_WR_N
     );
 
-
     reg:  Register16
       port map(
         clock => CLK_SLOW,
@@ -136,12 +135,9 @@ BEGIN
     ----------------------------------------
     -- Controla LOAD do display e da ram e LED ! --
     ----------------------------------------
-	 
-
-	 LOAD_RAM <= '1' when (ADDRESS <= "011111111111111");
-	 LOAD_DISPLAY <= '1' when (ADDRESS >= "100000000000000" and ADDRESS <= "101001010111111");
-	 LOAD_LED <= '1' when (ADDRESS = "101001011000000");
-
+    --LOAD_DISPLAY <= ??????; 
+    --LOAD_RAM     <= ??????; 
+    --LOAD_LED     <= ??????; 
 
     ----------------------------------------
     -- SW e LED                           --
@@ -157,11 +153,7 @@ BEGIN
     -- SAIDA do memory I/O                --
     ----------------------------------------
     -- precisar ser: RAM ou SW16
-
- 
-
-
-	 OUTPUT <= SW16 when (ADDRESS = "101001011000001") else OUTPUT_RAM when (ADDRESS <= "011111111111111");
+    -- OUTPUT <= ?????? ;
 
 
 END logic;
