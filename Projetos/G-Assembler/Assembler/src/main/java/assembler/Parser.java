@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.LinkedList;
 
 /**
  * Encapsula o código de leitura. Carrega as instruções na linguagem assembly,
@@ -102,8 +103,7 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String symbol(String command) {
-        /* TODO: implementar */
-    	return null;
+        return command.split(",")[0].split("\\$")[1];
     }
 
     /**
@@ -113,8 +113,7 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public String label(String command) {
-        /* TODO: implementar */
-    	return null;
+        return command.split(":")[0];
     }
 
     /**
@@ -124,8 +123,9 @@ public class Parser {
      * @return um vetor de string contento os tokens da instrução (as partes do comando).
      */
     public String[] instruction(String command) {
-        /* TODO: implementar */
-    	return null;
+        return command.replaceAll(",", " ").split(" ");
+
+
     }
 
 
