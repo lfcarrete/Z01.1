@@ -118,22 +118,15 @@ public class Assemble {
                     instruction = instructionBuilder.toString();
                     break;
                 case A_COMMAND:
-                    String roma = parser.symbol(command);
-                    //System.out.println("ROM:" + roma);
                     try {
-                        int teste = Integer.parseInt(roma);
-                        symbol = roma;
-                        //System.out.println("Valor Real");
+                        int symbol_check = Integer.parseInt(parser.symbol(command));
+                        symbol = parser.symbol(command);
                     }catch(Exception e) {
-
-                        symbol = table.getAddress(roma).toString();
+                        symbol = table.getAddress(parser.symbol(command)).toString();
                     }
-                    //System.out.println(symbol);
-                    instruction  = "00" + Code.toBinary(symbol);
-                    System.out.println(instruction);
                     instructionBuilder.setCharAt(0,'0');
                     instructionBuilder.replace(2,18,Code.toBinary(symbol));
-                    System.out.println(instructionBuilder);
+                    instruction = instructionBuilder.toString();
                     break;
                 default:
                     continue;

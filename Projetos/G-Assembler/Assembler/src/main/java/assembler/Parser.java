@@ -103,11 +103,7 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String symbol(String command) {
-        if (commandType(command) == CommandType.A_COMMAND) {
             return command.split(",")[0].split("\\$")[1];
-        } else {
-            return null;
-        }
     }
 
     /**
