@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/test/test.iml" filepath="$PROJECT_DIR$/src/test/test.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/AssemblerZ01.iml" filepath="$PROJECT_DIR$/AssemblerZ01.iml" />
+>>>>>>> ec2ecc84037824b5fca6b86226fabc80b8a02d58
     </modules>
   </component>
 </project>
