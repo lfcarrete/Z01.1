@@ -1,10 +1,10 @@
-# do /home/borg/Documents/ELementos/Z01.1-CGrupo/Projetos/F-Computador/Z01-Simulator-RTL/do/sim.do
+# do /home/borg/Documents/Insper-Entregas/Z01.1-CGrupo/Projetos/F-Computador/Z01-Simulator-RTL/do/sim.do
 # 1
 # 1
 # 1
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:54:03 on May 22,2020
+# Start time: 09:40:52 on Jun 05,2020
 # vcom -reportprogress 300 -work work ../../B-LogicaCombinacional/src/rtl/And16.vhd ../../B-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../B-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../B-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../B-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../B-LogicaCombinacional/src/rtl/Mux16.vhd ../../B-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../B-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../B-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../B-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../B-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../B-LogicaCombinacional/src/rtl/Nand.vhd ../../B-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../B-LogicaCombinacional/src/rtl/Not16.vhd ../../B-LogicaCombinacional/src/rtl/Or16.vhd ../../B-LogicaCombinacional/src/rtl/Or8Way.vhd ../../B-LogicaCombinacional/src/rtl/binarioToBcd.vhd ../../B-LogicaCombinacional/src/rtl/circuito.vhd ../../B-LogicaCombinacional/src/rtl/detectorDeMoedas.vhd ../../B-LogicaCombinacional/src/rtl/impressora.vhd ../../B-LogicaCombinacional/src/rtl/sevenSeg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -53,10 +53,10 @@
 # -- Compiling architecture arch of impressora
 # -- Compiling entity sevenSeg
 # -- Compiling architecture arch of sevenSeg
-# End time: 18:54:03 on May 22,2020, Elapsed time: 0:00:00
+# End time: 09:40:52 on Jun 05,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:54:03 on May 22,2020
+# Start time: 09:40:52 on Jun 05,2020
 # vcom -reportprogress 300 -work work ../../C-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../C-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -77,10 +77,10 @@
 # -- Compiling architecture rtl of inversor16
 # -- Compiling entity zerador16
 # -- Compiling architecture rtl of zerador16
-# End time: 18:54:03 on May 22,2020, Elapsed time: 0:00:00
+# End time: 09:40:52 on Jun 05,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:54:03 on May 22,2020
+# Start time: 09:40:52 on Jun 05,2020
 # vcom -reportprogress 300 -work work ../../D-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../D-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../D-LogicaSequencial/src/rtl/PC.vhd ../../D-LogicaSequencial/src/rtl/Ram4K.vhd ../../D-LogicaSequencial/src/rtl/Ram512.vhd ../../D-LogicaSequencial/src/rtl/Ram64.vhd ../../D-LogicaSequencial/src/rtl/Ram8.vhd ../../D-LogicaSequencial/src/rtl/Register16.vhd ../../D-LogicaSequencial/src/rtl/Register32.vhd ../../D-LogicaSequencial/src/rtl/Register64.vhd ../../D-LogicaSequencial/src/rtl/Register8.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -108,10 +108,10 @@
 # -- Compiling architecture arch of Register64
 # -- Compiling entity Register8
 # -- Compiling architecture arch of Register8
-# End time: 18:54:04 on May 22,2020, Elapsed time: 0:00:01
+# End time: 09:40:52 on Jun 05,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:54:04 on May 22,2020
+# Start time: 09:40:52 on Jun 05,2020
 # vcom -reportprogress 300 -work work ../src/rtl/MemoryIO.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -119,10 +119,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity MemoryIO
 # -- Compiling architecture logic of MemoryIO
-# End time: 18:54:04 on May 22,2020, Elapsed time: 0:00:00
+# End time: 09:40:52 on Jun 05,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:54:04 on May 22,2020
+# Start time: 09:40:52 on Jun 05,2020
 # vcom -reportprogress 300 -work work ../src/rtl/ControlUnit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -139,11 +139,11 @@
 # ** Error: ../src/rtl/ControlUnit.vhd(58): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
 # ** Error: ../src/rtl/ControlUnit.vhd(61): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
 # ** Error: ../src/rtl/ControlUnit.vhd(63): VHDL Compiler exiting
-# End time: 18:54:04 on May 22,2020, Elapsed time: 0:00:00
+# End time: 09:40:52 on Jun 05,2020, Elapsed time: 0:00:00
 # Errors: 10, Warnings: 0
-# ** Error: /home/borg/intelFPGA/18.1/modelsim_ase/linuxaloem/vcom failed.
-# Error in macro /home/borg/Documents/ELementos/Z01.1-CGrupo/Projetos/F-Computador/Z01-Simulator-RTL/do/load.do line 8
-# /home/borg/intelFPGA/18.1/modelsim_ase/linuxaloem/vcom failed.
+# ** Error: /home/borg/intelFPGA/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/borg/Documents/Insper-Entregas/Z01.1-CGrupo/Projetos/F-Computador/Z01-Simulator-RTL/do/load.do line 8
+# /home/borg/intelFPGA/17.1/modelsim_ase/linuxaloem/vcom failed.
 #     while executing
 # "vcom -reportprogress 300 -work work ../src/rtl/ControlUnit.vhd"
 # Break key hit

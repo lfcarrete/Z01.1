@@ -1,20 +1,18 @@
-leaw $0, %A
+leaw $496, %A
 movw %A, %D
-leaw $21184, %A
-movw %D, (%A)
+leaw $21184,%A
+movw %D,(%A) 
 
-leaw $65025, %A
+
+leaw $14, %A
 movw %A, %D
-leaw $21185, %A
-movw (%A), %A
-orw %D,%A, %D
+leaw $21185, %A 
+andw (%A), %D, %D
 notw %D
-leaw $21184, %A
-movw %D, (%A)
-
-
-
-
+leaw $65521, %A
+subw %D, %A, %D
+leaw $21184,%A
+orw %D,(%A), (%A) 
 
 
 
