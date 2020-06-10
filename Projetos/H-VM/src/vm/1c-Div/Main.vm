@@ -13,9 +13,9 @@
 
 function Main.main 0
 
-
-
-
+push constant 15
+push constant 5
+div
 
 
 // esse loop sempre deve existir!
