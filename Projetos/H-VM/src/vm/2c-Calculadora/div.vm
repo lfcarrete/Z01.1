@@ -1,1 +1,19 @@
 function div 2
+	label START
+	push argument 0
+	push constant 0
+	eq
+if-goto end
+	push local 0
+	push constant 1
+	add
+	pop local 0
+	push argument 0
+	push argument 1
+	sub
+	pop argument 0
+	goto START
+
+label end
+	push local 0
+	return

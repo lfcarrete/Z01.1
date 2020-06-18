@@ -14,7 +14,21 @@
 
 function Main.main 0
 
-   
+label START
+push temp 0
+push constant 0
+eq
+if-goto end
+push temp 3
+push constant 1
+add
+pop temp 3
+push temp 0
+push temp 1
+sub
+pop temp 0
+goto START
+
 label end
 
 
