@@ -13,10 +13,40 @@
 
 function Main.main 0
 
-push constant 15
-push constant 5
-div
+// RAM[0] = 0
+// RAM[1] = 15
 
+push constant 0
+pop temp 0
+push constant 15
+pop temp 1
+
+label LOOP
+
+
+// IF RAM[1] != 0 -> RAM[1] -= 5
+//                -> RAM[0] += 1
+
+push temp 0
+push constant 1
+add
+pop temp 0
+
+push temp 1
+push constant 5
+sub
+pop temp 1
+
+// IF RAM[1] == 0 -> BREAK
+
+push temp 1
+push constant 0
+eq
+if-goto BREAK
+
+goto LOOP
+
+label BREAK
 
 // esse loop sempre deve existir!
 // caso contrario o computador vai
